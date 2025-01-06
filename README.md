@@ -21,3 +21,11 @@ this 100%.
   - **Pie Charts**: Visualize the proportion of presence and absence.
   - **Table Views**: Provide a tabular representation of detailed attendance data.
 - **Absentee Alerts**: Automatically generate a list of users who have been absent for a specified number of consecutive weeks.
+
+## Requirements
+- **A LogIn page**: The admin logs in and can make the adjusments
+- **Consistent Layout**: The colors stay consistent by every page also the footers stay the same
+- **Form to Add,Delete and Edit Users**: The admin can add,edit and delete users in from the database
+- **A graph and table that shows the Users data**
+- **Ranking System**
+- **Exporting an excel file file with the user's data** : When the admin clicks a button the admin gets an excel sheet of data
