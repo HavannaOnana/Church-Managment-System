@@ -29,6 +29,11 @@
             <label for="password" name="password"></label><br>
             <input type="text" placeholder="password"><br><br>
             <button type="submit">Submit</button>
+            <p class="text">
+               After logging in, you can add new members, check how many times a<br>
+                member has been present, view attendance data through graphs, access a ranking<br>
+                 system for attendance, and export attendance data to an Excel file.
+            </p>
         </form>
     </div>
 </body>

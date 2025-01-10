@@ -19,7 +19,7 @@ body{
 }
 
 .form img{
-    width: 40vw;
+    width: 36vw;
 }
 
 .form{
@@ -73,4 +73,9 @@ form button:hover{
     background-color: gold;
     color: black;
 
+}
+
+form .text{
+    font-family: trail;
+    font-size: small;
 }
