@@ -1,6 +1,7 @@
 <?php
 
 class Database{
+    
     public $pdo;
     public $stmt;
 
