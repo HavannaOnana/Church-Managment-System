@@ -15,14 +15,19 @@ class Database{
     }
 
     public function run($query, $param = null){
-        $this->stmt = $this->pdo->prepare($query);
+        try{
+            $this->stmt = $this->pdo->prepare($query);
         if($param!= null){
             $this->stmt->execute($param);
         }
         return $this->stmt->execute();
+        }
+        catch(PDOException $e){
+            echo "Error by ".$e->getMessage();
+        }
     }
     
 }
 
-
 ?>
+
