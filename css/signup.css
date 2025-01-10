@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family:boulder ;
+    src: url("../fonts/Boulder-Bold.ttf");
+}
+
+@font-face {
+    font-family:league ;
+    src: url("../fonts/LeagueSpartan-Bold.otf");
+}
+
+@font-face {
+    font-family: trail;
+    src: url("../fonts/Questrial-Regular.ttf");
+}
+
+.form img{
+    width: 40vw;
+}
+
+.form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form form img{
+    width: 4vw;
+}
+
+.form form{
+    width: 100vw;
+    text-align: center;
+    margin-top: -12%;
+}
+
+form h1{
+    font-family: league;
+}
+
+form input{
+    width: 30vw;
+    height: 5vh;
+    border-radius: 4px;
+    border: solid black 0.3px;
+    padding: 2px;
+    font-family: trail;
+}
+
+form h2{
+    font-family: league;
+}
+
+form button{
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    font-family: trail;
+    transition: background-color 1s ease-in-out , color 1s ease-in-out;
+}
+
+form button:hover{
+    background-color: gold;
+    color: black;
+
+}
