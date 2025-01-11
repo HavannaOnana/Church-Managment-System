@@ -15,18 +15,22 @@ class Database{
         }
     }
 
-    public function run($query, $param = null){
-        try{
+   public function run($query, $params = null)
+    {
+        try {
             $this->stmt = $this->pdo->prepare($query);
-        if($param!= null){
-            $this->stmt->execute($param);
-        }
-        return $this->stmt->execute();
-        }
-        catch(PDOException $e){
-            echo "Error by ".$e->getMessage();
+            if ($params !== null) {
+                $this->stmt->execute($params);
+            } else {
+                $this->stmt->execute();
+            }
+            return $this->stmt; 
+        } catch (PDOException $e) {
+            echo "Execution error: " . $e->getMessage();
+            return false;
         }
     }
+
     
 }
 
