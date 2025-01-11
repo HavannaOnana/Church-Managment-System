@@ -2,9 +2,18 @@
 
 
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $password = $_POST['password'];
 
-
-
+    if($password === "102488"){
+        session_start();
+        header("Location: ./Pages/welcome.php");
+        exit;
+    }else{
+        $error = "Invalid password. Please try again.";
+    }
+}
 
 
 ?>
@@ -22,19 +31,20 @@
         <img src="./images/signout.png" alt="">
         <form action="" method="post">
             <img src="./images/arise-logo-150.png" alt="">
-            <h1>welcome back.</h1>
-            <label for="email" name="email"></label><br>
-            <input type="text" placeholder="email"><br>
-            <h2>&</h2>
-            <label for="password" name="password"></label><br>
-            <input type="text" placeholder="password"><br><br>
+             <h1>Log In</h1>
+            <label for="password" name="password" id="password"></label><br>
+            <input type="text" placeholder="password" name="password" for="password"><br><br>
             <button type="submit">Submit</button>
             <p class="text">
                After logging in, you can add new members, check how many times a<br>
                 member has been present, view attendance data through graphs, access a ranking<br>
                  system for attendance, and export attendance data to an Excel file.
             </p>
+            <?php if (!empty($error)): ?>
+                <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
         </form>
     </div>
 </body>
 </html>
+
