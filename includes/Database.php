@@ -2,13 +2,14 @@
 
 class Database{
     
-    public $pdo;
+    public $db;
     public $stmt;
 
-    public function __construct($db='church',$host = "localhost:3310",$user='root',$pwd=''){
+    public function __construct($db='church',$user='root',$pwd='',$host="localhost:3310"){
         try{
-            $this->pdo = new PDO("mysqlhost:host=$host;dbname=$db",$user,$pwd);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $this->db = new PDO("mysqlhost:host=$host;dbname=$db",$user,$pwd);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            echo "Succesffully connected";
         }
         catch(PDOException $e){
             echo "Connection failed : ".$e->getMessage();
@@ -18,7 +19,7 @@ class Database{
    public function run($query, $params = null)
     {
         try {
-            $this->stmt = $this->pdo->prepare($query);
+            $this->stmt = $this->db->prepare($query);
             if ($params !== null) {
                 $this->stmt->execute($params);
             } else {
@@ -35,4 +36,13 @@ class Database{
 }
 
 ?>
+
+
+<?php
+try {
+    $pdo = new PDO("mysql:host=localhost:3310;dbname=church", "root", "");
+    echo "Connection successful!";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 
