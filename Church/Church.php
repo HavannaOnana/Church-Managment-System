@@ -50,7 +50,7 @@ class Church{
 
     //deleting a member
     public function deleteMember($ID){
-         $sql = "DELETE * FROM members WHERE ID = :ID";
+         $sql = "DELETE FROM members WHERE ID = :ID";
          $params = [":ID"=>$ID];
          return $this->database->run($sql,$params);
     }
