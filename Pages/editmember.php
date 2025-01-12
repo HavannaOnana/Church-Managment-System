@@ -44,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Member</title>
+    <link rel="stylesheet" href="../css/members.css">
 </head>
-<body>
+<div class="body">
     <h1>Update Member</h1>
     <form action="" method="POST">
         <label for="name" name="name">Name</label><br>
@@ -62,5 +63,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Update Member</button>
     </form>
-</body>
+</div>
 </html>

@@ -53,3 +53,60 @@ body{
     background-color: #013335;
     color: gold;
 }
+
+.body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.body h1{
+    font-family: boulder;
+}
+
+.body label{
+    font-family: trail;
+}
+
+.body input{
+    font-family: trail;
+    width: 20%;
+    height: 4vh;
+}
+
+.body button{
+    padding: 10px;
+    font-family: boulder;
+    background-color: #013335;
+    color: gold;
+    border: none;
+}
+
+.showMembers{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.showMembers h1{
+    font-family: league;
+}
+
+.showMembers th{
+    font-family: league;
+    background-color: #013335;
+    color: gold;
+}
+
+.showMembers tr{
+    font-family: trail;
+    text-align: center;
+}
+
+.showMembers a{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: #013335;
+}
