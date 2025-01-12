@@ -28,6 +28,13 @@ class Church{
         return $this->database->run($sql)->fetchAll();
     }
 
+    //getting a member by id 
+    public function GetMemberByID($ID){
+        $sql = "SELECT * FROM members WHERE ID = :ID";
+        $params = [":ID"=>$ID];
+        return $this->database->run($sql,$params);
+    }
+
     // updating a member
     public function updateMember($ID,$name,$age,$email,$phonenumber){
         $sql = "UPDATE members SET name = :name, age = :age, email = :email, phonenumber =:phonenumber WHERE ID = :ID";
@@ -41,7 +48,12 @@ class Church{
         return $this->database->run($sql,$param);
     }
 
-    //deleting a 
+    //deleting a member
+    public function deleteMember($ID){
+         $sql = "DELETE * FROM members WHERE ID = :ID";
+         $params = [":ID"=>$ID];
+         return $this->database->run($sql,$params);
+    }
 
   //rendering all the members
   public function renderMembers() {
@@ -71,13 +83,13 @@ class Church{
             echo '<td>' . htmlspecialchars($member['phonenumber']) . '</td>';
 
             echo '<td>
-                    <form method="POST" action="updateMember.php" style="display:inline;">
+                    <form method="POST" action="../Pages/verify/editmember.php" style="display:inline;">
                         <input type="hidden" name="id" value="' . $member['ID'] . '">
                         <button type="submit">Update</button>
                     </form>
-                    <form method="POST" action="deleteMember.php" style="display:inline;">
+                    <form method="POST" action="../Pages/verify/delete.php" style="display:inline;">
                         <input type="hidden" name="id" value="' . $member['ID'] . '">
-                        <button type="submit" onclick="return confirm(\'Are you sure you want to delete this member?\');">Delete</button>
+                        <button type="submit">Delete</button>
                     </form>
                   </td>';
 
