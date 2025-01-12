@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: beige;
 }
 
 @font-face {
@@ -52,3 +53,32 @@ body{
     background-color: #013335;
     color: gold;
 }
+
+.attendance{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.attendance .date{
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    color: #013335;
+}
+
+.date h1{
+    font-family: boulder;
+}
+
+.date ion-icon{
+    font-size: 4em;
+    color: #013335;
+}
+
