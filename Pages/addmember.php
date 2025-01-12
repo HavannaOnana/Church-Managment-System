@@ -50,16 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Add a Member</h1>
         <form action="addmember.php" method="post">
             <label for="name">Name of Member</label><br>
-            <input type="text" name="name" id="name"><br><br>
+            <input type="text" name="name" id="name" required><br><br>
 
             <label for="age">Age</label><br>
-            <input type="text" name="age" id="age"><br><br>
+            <input type="text" name="age" id="age" required><br><br>
 
             <label for="email">Email</label><br>
-            <input type="text" name="email" id="email"><br><br>
+            <input type="text" name="email" id="email" required><br><br>
 
             <label for="phonenumber">Phone Number</label><br>
-            <input type="text" name="phonenumber" id="phonenumber"><br><br>
+            <input type="text" name="phonenumber" id="phonenumber" required><br><br>
 
             <button type="submit">Add Member</button>
         </form>

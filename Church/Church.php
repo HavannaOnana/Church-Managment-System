@@ -32,7 +32,7 @@ class Church{
     public function GetMemberByID($ID){
         $sql = "SELECT * FROM members WHERE ID = :ID";
         $params = [":ID"=>$ID];
-        return $this->database->run($sql,$params);
+        return $this->database->run($sql,$params)->fetch(PDO::FETCH_ASSOC); ;
     }
 
     // updating a member
@@ -83,15 +83,11 @@ class Church{
             echo '<td>' . htmlspecialchars($member['phonenumber']) . '</td>';
 
             echo '<td>
-                    <form method="POST" action="../Pages/verify/editmember.php" style="display:inline;">
-                        <input type="hidden" name="id" value="' . $member['ID'] . '">
-                        <button type="submit">Update</button>
-                    </form>
-                    <form method="POST" action="../Pages/verify/delete.php" style="display:inline;">
-                        <input type="hidden" name="id" value="' . $member['ID'] . '">
-                        <button type="submit">Delete</button>
-                    </form>
-                  </td>';
+                    <a href="../Pages/editmember.php?id=' . $member["ID"] . '">Update</a> |
+                    <a href="../Pages/delete.php?id=' . $member["ID"] . '">Delete</a>
+                </td>';
+
+
 
             echo '</tr>';
         }
