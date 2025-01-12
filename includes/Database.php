@@ -1,38 +1,36 @@
 <?php
+class Database
+{
+    public $pdo;   // Database handle
+    public $stmt;  // Holds a PDOStatement object
 
-class Database{
-    
-    public $db;
-    public $stmt;
-
-    public function __construct($db='church',$user='root',$pwd='',$host="localhost:3310"){
-        try{
-            $this->db = new PDO("mysqlhost:host=$host;dbname=$db",$user,$pwd);
-            $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            echo "Succesffully connected";
-        }
-        catch(PDOException $e){
-            echo "Connection failed : ".$e->getMessage();
+    public function __construct($db ="church", $host = 'localhost:3310', $user = 'root', $pass = '')
+    {
+        try {
+            $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+            $this->pdo = new PDO($dsn, $user, $pass);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Connection error: " . $e->getMessage());
         }
     }
 
-   public function run($query, $params = null)
+    // Run-method to perform the prepare and execute parts of PDO
+    public function run($query, $params = null)
     {
         try {
-            $this->stmt = $this->db->prepare($query);
+            $this->stmt = $this->pdo->prepare($query);
             if ($params !== null) {
                 $this->stmt->execute($params);
             } else {
                 $this->stmt->execute();
             }
-            return $this->stmt; 
+            return $this->stmt; // Return the PDOStatement object
         } catch (PDOException $e) {
             echo "Execution error: " . $e->getMessage();
             return false;
         }
     }
-
-    
 }
 
 ?>

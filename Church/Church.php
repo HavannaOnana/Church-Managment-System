@@ -5,38 +5,47 @@ include_once "../includes/Database.php";
 
 class Church{
 
-    public $db;
+    public $database;
 
     public function __construct(){
-        $this->db = new Database();
+        $this->database = new Database();
     }
 
     public function AddMember($name,$age,$email,$phonenumber){
-        $sql = "INSERT INTO users(name,age,email,phonenumber) VALUES(:name,:age,:email,:phonenumber)";
+        $sql = "INSERT INTO members (name,age,email,phonenumber) VALUES(:name,:age,:email,:phonenumber)";
         $param = [
             ":name"=>$name,
             ":age"=>$age,
             ":email"=>$email,
             "phonenumber"=>$phonenumber
         ];
-        return $this->db->run($sql,$param);
+        return $this->database->run($sql,$param);
     }
     
     //selecting all the members
     public function SelectAllMembers(){
-        $sql = "SELECT * FROM users";
-        return $this->db->run($sql)->fetchAll();
+        $sql = "SELECT * FROM members";
+        return $this->database->run($sql)->fetchAll();
     }
 
     // updating a member
     public function updateMember($ID,$name,$age,$email,$phonenumber){
-        //$sql = "UPDATE users"
+        $sql = "UPDATE members SET name = :name, age = :age, email = :email, phonenumber =:phonenumber WHERE ID = :ID";
+        $param = [
+            ":ID"=>$ID,
+            ":name"=>$name,
+            ":age"=>$age,
+            ":email"=>$email,
+            ":phonenumber"=>$phonenumber
+        ];
+        return $this->database->run($sql,$param);
     }
+
+    //deleting a 
 
   //rendering all the members
   public function renderMembers() {
     try {
-        // Fetch all members
         $members = $this->SelectAllMembers();
 
         // Check if the query returned a valid result
@@ -44,7 +53,6 @@ class Church{
             throw new Exception('Failed to fetch members. The result is not iterable.');
         }
 
-        // Start table structure
         echo '<table border="1" cellpadding="10" cellspacing="0">';
         echo '<tr>
                 <th>ID</th>
@@ -54,8 +62,6 @@ class Church{
                 <th>Phone Number</th>
                 <th>Actions</th>
               </tr>';
-
-        // Loop through each member and create a row
         foreach ($members as $member) {
             echo '<tr>';
             echo '<td>' . $member['ID'] . '</td>';
@@ -64,7 +70,6 @@ class Church{
             echo '<td>' . htmlspecialchars($member['email']) . '</td>';
             echo '<td>' . htmlspecialchars($member['phonenumber']) . '</td>';
 
-            // Add Update and Delete buttons with links or forms
             echo '<td>
                     <form method="POST" action="updateMember.php" style="display:inline;">
                         <input type="hidden" name="id" value="' . $member['ID'] . '">

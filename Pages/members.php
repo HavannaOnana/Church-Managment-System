@@ -1,6 +1,6 @@
 <?php
 
-
+include_once "../includes/Database.php";
 include_once "../Church/Church.php";
 
 
