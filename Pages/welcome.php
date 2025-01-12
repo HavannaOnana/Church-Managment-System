@@ -98,8 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="navbar">
         <img src="../images/arise-logo-150.png" alt="">
         <a href="../Pages/welcome.php">Attendance</a>
-        <a href="#">Rankings</a>
-        <a href="#">Graphs</a>
+        <a href="../Pages/ranking.php">Rankings</a>
+        <a href="../Pages/graph.php">Graphs</a>
         <a href="../Pages/members.php">Members</a>
         <button type="button" id="export">Export</button>
     </div>

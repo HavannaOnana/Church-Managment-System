@@ -54,61 +54,69 @@ body{
     color: gold;
 }
 
-.attendance{
-    width: 100%;
+.ranking{
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
+    width: 100vw;
+    font-size: large;
+    margin-top: 3%;
 }
 
-.attendance .date{
-    text-align: center;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 2%;
-    color: #013335;
-}
 
-.date h1{
+.ranking h1{
     font-family: boulder;
 }
 
-.date ion-icon{
-    font-size: 4em;
+.ranking .position{
+    padding: 10px;
+}
+
+.ranking table {
+    border-collapse: separate; /* Ensure cells don't have double borders */
+    width: 80%; /* Make the table responsive */
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    text-align: center;
+    border-spacing: 0 1px;
+}
+
+
+.ranking th{
+    background-color: #013335;
+    color: gold;
+} 
+
+.ranking td{
+    font-family: trail;
+}
+
+.ranking td:first-child {
+    padding-left: 3px; /* Extra padding for the first column */
+}
+
+.ranking td:last-child {
+    padding-right: 5px; /* Extra padding for the last column */
+}
+
+.ranking .rankcell{
+    background-color: #013335;
+    color: wheat; 
+}
+
+.ranking .TP{
+    background-color: green;
+    color: beige;
+}
+
+.ranking .TA{
+    background-color: tomato;
     color: #013335;
 }
 
-
-table th{
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #013335;
-    color: gold;
+.ranking .bold{
+    font-weight: bold;
+    font-family: league;
 }
-
-
-form button{
-    margin-top: 7%;
-    padding: 10px;
-    border: none;
-    font-family: trail;
-    background-color: #013335;
-    color: goldenrod;
-}
-
-form tr{
-    font-family: trail;
-}
-
-form select {
-    font-family: trail;
-}
-
-form select option{
-    font-family: trail;
-}
-
