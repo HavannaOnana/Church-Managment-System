@@ -82,3 +82,36 @@ body{
     color: #013335;
 }
 
+table{
+    width: 100%;
+    font-size: larger;
+}
+
+table th{
+    width: 100%;
+    font-family: boulder;
+    background-color: #013335;
+    color: gold;
+}
+
+form button{
+    margin-top: 7%;
+    padding: 10px;
+    border: none;
+    font-family: trail;
+    background-color: #013335;
+    color: goldenrod;
+}
+
+form tr{
+    font-family: trail;
+}
+
+form select {
+    font-family: trail;
+}
+
+form select option{
+    font-family: trail;
+}
+

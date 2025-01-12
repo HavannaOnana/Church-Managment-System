@@ -2,32 +2,26 @@
 include_once "../Church/Attendance.php";
 include_once "../includes/Database.php";
 
-// Handle the date logic
 $currentDate = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
 $timestamp = strtotime($currentDate);
 
-// Display-friendly date format
 $displayDate = date('l, F j, Y', $timestamp);
 
-// Previous and next Sunday
 $previousSunday = date('Y-m-d', strtotime('-7 days', $timestamp));
 $nextSunday = date('Y-m-d', strtotime('+7 days', $timestamp));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $database = new Database();
     $attendanceData = $_POST['status'];
-    $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d');  // Ensure we use the correct date
+    $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d');  
 
     foreach ($attendanceData as $memberID => $status) {
-        // Fetch the member's name from the members table
         $sql = "SELECT name FROM members WHERE ID = :user_id";
         $member = $database->run($sql, [':user_id' => $memberID])->fetch();
 
         if ($member) {
-            // Member's name
             $memberName = $member['name'];
 
-            // Check if a record already exists for this member and date
             $sql = "SELECT * FROM attendance WHERE users_id = :users_id AND date = :date";
             $existingRecord = $database->run($sql, [
                 ':users_id' => $memberID,
@@ -35,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ])->fetch();
 
             if ($existingRecord) {
-                // Update the existing record
                 if ($status === 'Present') {
                     $presentTimes = 1;
                     $absentTimes = 0;
@@ -55,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':date' => $date
                 ];
             } else {
-                // Insert a new record if no existing record is found
                 if ($status === 'Present') {
                     $presentTimes = 1;
                     $absentTimes = 0;
@@ -68,21 +60,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         VALUES (:users_id, :name, :status, :date, :present_times, :absent_times)";
                 $params = [
                     ':users_id' => $memberID,
-                    ':name' => $memberName,  // Use the member's name here
+                    ':name' => $memberName,  
                     ':status' => $status,
                     ':date' => $date,
                     ':present_times' => $presentTimes,
                     ':absent_times' => $absentTimes
                 ];
             }
-
-            // Execute the query with the appropriate parameters
             $database->run($sql, $params);
         }
     }
 
     echo "Attendance updated successfully!";
-    header("Location: welcome.php?date=$date");  // Redirect back to the current date page
+    header("Location: welcome.php?date=$date"); 
     exit;
 }
 

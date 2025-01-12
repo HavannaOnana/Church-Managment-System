@@ -48,7 +48,7 @@ public function renderAttendanceForm($date) {
         echo '<td>
                 <select name="status[' . $member['ID'] . ']">
                     <option value="Present" ' . ($status === 'Present' ? 'selected' : '') . '>Present</option>
-                    <option value="Absent" ' . ($status === 'Absent' ? 'selected' : '') . '>Absent</option>
+                    <option value="Absent" class="absent" ' . ($status === 'Absent' ? 'selected' : '') . '>Absent</option>
                 </select>
               </td>';
         echo '</tr>';
