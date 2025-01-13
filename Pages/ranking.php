@@ -29,9 +29,10 @@ $rankings = $ranking->getRankings(); // Fetch updated rankings
 
     <div class="ranking">
         <h1>Rankings</h1>
+        <p>under is the board which shows who has been present the <br> most. </p>
         <table border="" cellpadding="15" cellspacing="0">
             <tr>
-                <th class="position">#</th>
+                <th class="position">Ranking</th>
                 <th>Name</th>
                 <th class="TP">Total Present</th>
                 <th class="TA">Total Absent</th>

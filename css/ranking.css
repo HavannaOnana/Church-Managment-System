@@ -38,11 +38,11 @@ body{
     color: black;
     padding: 10px;
     background-color:none;
-    transition: background-color 1s ease-in-out , color 1s ease-in-out ;
+    transition: background-color 1s ease-in-out , color 0.3s ease-in;
 }
 
 .navbar a:hover{
-   background-color: #013335;
+   background-color: #6D2323;
    color: aliceblue;
 }
 
@@ -50,8 +50,8 @@ body{
     border: none;
     font-family: trail;
     padding: 10px;
-    background-color: #013335;
-    color: gold;
+    background-color: #6D2323;
+    color: white;
 }
 
 .ranking{
@@ -65,7 +65,8 @@ body{
 
 
 .ranking h1{
-    font-family: league;
+    font-family: boulder;
+    font-size: 2.5em;
 }
 
 .ranking .position{
@@ -75,7 +76,7 @@ body{
 .ranking table {
     border-collapse: separate; /* Ensure cells don't have double borders */
     width: 80%; /* Make the table responsive */
-    margin: 20px 0;
+    margin: 10px 0;
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: left;
@@ -83,10 +84,15 @@ body{
     border-spacing: 0 1px;
 }
 
+.ranking p{
+    text-align: center;
+    font-family: trail;
+}
+
 
 .ranking th{
-    background-color: #013335;
-    color: gold;
+    background-color: #A31D1D;
+    color: white;
 } 
 
 .ranking td{
@@ -102,21 +108,24 @@ body{
 }
 
 .ranking .rankcell{
-    background-color: #013335;
-    color: wheat; 
+    color: white; 
+    width: 10%;
+    background-color: #A31D1D;
+    font-family: boulder;
 }
 
 .ranking .TP{
-    background-color: green;
+    background-color: #1e5c0a;
     color: beige;
 }
 
 .ranking .TA{
-    background-color: tomato;
-    color: #013335;
+    background-color: #A31D1D;
+    color: beige;
 }
 
 .ranking .bold{
     font-weight: bold;
     font-family: league;
+    width: 10%;
 }
