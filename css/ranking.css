@@ -2,6 +2,9 @@ body{
     margin: 0;
     padding: 0;
     background-color: beige;
+    background: linear-gradient(to bottom right, beige, whitesmoke);
+    height: 100vh;
+
 }
 
 @font-face {
@@ -67,6 +70,7 @@ body{
 .ranking h1{
     font-family: boulder;
     font-size: 2.5em;
+    color: #A31D1D;
 }
 
 .ranking .position{
@@ -91,7 +95,7 @@ body{
 
 
 .ranking th{
-    background-color: #A31D1D;
+    background-color: #013335;
     color: white;
 } 
 
@@ -110,7 +114,7 @@ body{
 .ranking .rankcell{
     color: white; 
     width: 10%;
-    background-color: #A31D1D;
+    background-color: #013335;
     font-family: boulder;
 }
 
