@@ -112,9 +112,8 @@ body{
 }
 
 .ranking .rankcell{
-    color: white; 
-    width: 10%;
-    background-color: #013335;
+    color: #013335; 
+    width: 3%;
     font-family: boulder;
 }
 
@@ -131,5 +130,9 @@ body{
 .ranking .bold{
     font-weight: bold;
     font-family: league;
-    width: 10%;
+    width: 2%;
+}
+
+.ranking .name{
+    width: 20%;
 }

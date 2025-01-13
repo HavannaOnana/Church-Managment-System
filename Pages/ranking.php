@@ -42,7 +42,7 @@ $rankings = $ranking->getRankings(); // Fetch updated rankings
             foreach ($rankings as $row) {
                 echo "<tr>";
                 echo "<td class='rankcell'>" . $rank++ . "</td>";
-                echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                echo "<td class='name'>" . htmlspecialchars($row['name']) . "</td>";
                 echo "<td class='bold'>" . htmlspecialchars($row['totalpresent']) . "</td>";
                 echo "<td class='bold'>" . htmlspecialchars($row['totalabsent']) . "</td>";
                 echo "</tr>";
