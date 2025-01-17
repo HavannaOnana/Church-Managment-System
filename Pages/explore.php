@@ -1,24 +1,13 @@
-<?php
-
-include_once "../includes/Database.php";
-include_once "../Church/Church.php";
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Admin</title>
-    <link rel="stylesheet" href="../css/members.css">
+    <title>Export Leaderboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-
-     <div class="navbar">
+    <div class="navbar">
         <img src="../images/arise-logo-150.png" alt="">
         <a href="../Pages/welcome.php">Attendance</a>
         <a href="../Pages/ranking.php">Rankings</a>
@@ -28,13 +17,11 @@ include_once "../Church/Church.php";
     </div>
 
 
-     <div class="showMembers">
-         <h1>List of Members</h1>
-         <?php
-           $members = new Church();
-           $members->renderMembers();
-         ?>
-     </div>
-    
+    <div class="content">
+        <h1>Export Leaderboard</h1>
+        <form method="GET" action="export-explore.php">
+            <button type="submit" class="export-button">Download Leaderboard</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -100,9 +100,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="../Pages/welcome.php">Attendance</a>
         <a href="../Pages/ranking.php">Rankings</a>
         <a href="../Pages/graph.php">Graphs</a>
-        <a href="../Pages/members.php">Members</a>
-        <button type="button" id="export">Export</button>
+        <a href="../Pages/addmember.php">Add Members</a>
+        <button type="button" id="export"><a href="../Pages/explore.php">Explore</a></button>
     </div>
+
 
     <div class="attendance">
         <div class="date">

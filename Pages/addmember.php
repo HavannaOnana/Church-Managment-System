@@ -37,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-      <div class="navbar">
+    <div class="navbar">
         <img src="../images/arise-logo-150.png" alt="">
         <a href="../Pages/welcome.php">Attendance</a>
         <a href="../Pages/ranking.php">Rankings</a>
         <a href="../Pages/graph.php">Graphs</a>
-        <a href="../Pages/members.php">Members</a>
-        <button type="button" id="export">Export</button>
+        <a href="../Pages/addmember.php">Add Members</a>
+        <button type="button" id="export"><a href="../Pages/explore.php">Explore</a></button>
     </div>
 
      <div class="addMemeber">

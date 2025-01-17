@@ -58,7 +58,7 @@ foreach ($data as $row) {
         <a href="../Pages/ranking.php">Rankings</a>
         <a href="../Pages/graph.php">Graphs</a>
         <a href="../Pages/addmember.php">Add Members</a>
-        <button type="button" id="export">Export</button>
+        <button type="button" id="export"><a href="../Pages/explore.php">Explore</a></button>
     </div>
 
     <h1>The Graph </h1>
