@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Export Leaderboard</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/export.css">
 </head>
 <body>
     <div class="navbar">
@@ -19,9 +19,26 @@
 
     <div class="content">
         <h1>Export Leaderboard</h1>
+        <p>Once you click the button below , an excel 
+            sheet will be automatically downloaded for <br>
+            you.
+        </p>
         <form method="GET" action="export-explore.php">
             <button type="submit" class="export-button">Download Leaderboard</button>
         </form>
     </div>
+
+    <div class="footer">
+        <h2>Negative One</h2>
+        <div class="icon">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-google"></ion-icon>
+            <ion-icon name="logo-pinterest"></ion-icon>
+            <ion-icon name="logo-laravel"></ion-icon>
+            <ion-icon name="logo-github"></ion-icon>
+        </div>
+    </div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
