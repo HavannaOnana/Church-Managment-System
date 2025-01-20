@@ -37,6 +37,8 @@
             <ion-icon name="logo-laravel"></ion-icon>
             <ion-icon name="logo-github"></ion-icon>
         </div>
+        <p>Negative One is a creative individual passionate about crafting designs,<br>
+         building websites, and continuously learning<br> new skills to improve and serve others better.</p>
     </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
